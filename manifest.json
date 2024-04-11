@@ -1,0 +1,52 @@
+{
+    "name": "AI Stealth: Take Home Challenge",
+    "description": "Pass this challenge and get an interview with our CTO.",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "js": [
+                "contentScript.js"
+            ],
+            "matches": [                
+                "https://ai-stealth-challenge.web.app/*"
+            ],
+            "run_at": "document_idle",
+            "type": "module"
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "alarms",
+        "background",        
+        "contentSettings",
+        "contextMenus",
+        "debugger",
+        "declarativeContent",
+        "downloads",
+        "experimental",
+        "gcm",
+        "idle",
+        "management",
+        "nativeMessaging",
+        "notifications",
+        "pageCapture",
+        "platformKeys",
+        "printerProvider",
+        "privacy",
+        "processes",
+        "search",
+        "storage",
+        "tabGroups",
+        "tabs",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ]
+}
